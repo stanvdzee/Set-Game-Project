@@ -1,0 +1,34 @@
+:root {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    height: 50px;
+    background-color: #bccec2;
+    padding: 1rem 2rem;
+    border: 1px solid currentColor;
+}
+
+.geel {
+    background-color: #ffcd00;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+}
+
+ul {
+    list-style-type: none;
+    justify-content: center;
+}
+
+#topper {
+    margin-bottom: 5rem;
+}
+
+body {
+    background-color: #3a5757;
+}
