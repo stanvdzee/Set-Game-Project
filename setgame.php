@@ -20,7 +20,12 @@
     <div class="container_field">
         <div class="container1" id="leftie">
             <button class="button" onclick="newGame()">nieuw Spel</button>
+            <button class="button" onclick="addCards()">voeg 3 kaarten toe</button>
+            <button class="button" onclick="findSet()">vind set</button>
+            <p id="scoreArea">Score: 100</p>  
+
             
+
     
     
     
