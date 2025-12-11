@@ -54,6 +54,38 @@ body {
     text-align: left;
 }
 
+.container1 {
+    background-color: #bccec2;
+    padding-top: 2rem;
+    padding-left: 2rem;
+    border: 2px solid currentColor;
+    border-radius: 20px;
+    max-width: 900px;
+
+    text-align: left;
+}
+
+.container2 {
+    background-color: #bccec2;
+    padding-top: 2rem;
+    border: 2px solid currentColor;
+    border-radius: 20px;
+    width: 900px;
+    height: 400px;
+
+}
+
+.container_field {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18rem;
+
+}
+
+#leftie {}
+
+
+
 .sets-row {
     display: flex;
     justify-content: space-between;
