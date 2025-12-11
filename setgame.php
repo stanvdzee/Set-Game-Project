@@ -36,3 +36,22 @@
     </div>
 </body>
 </html>
+<<<<<<< Updated upstream
+=======
+<div class="container_field">
+    <div class="container1" id="leftie">
+        <button class="button" onclick="newGame()">nieuw Spel</button>
+        <button class="button" onclick="Kaarten"()>Plus 3 Kaarten</button>
+        <button class="button" onclick="reset"()>reset</button>
+        <button class="button" onclick="????"()>???</button>
+        <button class="button" onclick="????"()>???</button>
+
+
+
+
+     </div>
+
+    <div class="container2" id="center"></div>
+
+</div>
+>>>>>>> Stashed changes
