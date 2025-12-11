@@ -10,6 +10,13 @@ a {
     border: 1px solid currentColor;
 }
 
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    gap: 5rem;
+    margin-top: 2rem;
+}
+
 .geel {
     background-color: #ffcd00;
 }
