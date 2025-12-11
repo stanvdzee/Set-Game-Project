@@ -15,24 +15,24 @@
 
     <section>
         <nav>
-            <ul>
-                <li>
+            <div class="ttu">
+                <div>
                     <a href="setgame.php" class="geel" id="topper">
                         play SET </a>
-                </li>
-            </ul>
-
-
-            <ul>
-                <li>
+                </div>
+                <div>
                     <a href="rules.php" id="topper">
-                        regels
-                    </a>
-                </li>
-            </ul>
+                        regels </a>
+                </div>
+            </div>
+
+
+
 
         </nav>
     </section>
+
+
 
 
 </body>
