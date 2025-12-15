@@ -11,10 +11,13 @@ a {
 }
 
 #navbar {
-    display: flex;
-    justify-content: space-between;
+
+    justify-content: space-evenly;
     gap: 5rem;
-    margin-top: 2rem;
+    margin-top: -7px;
+    background-color: #7e9e9b;
+    border: solid 2px black;
+    border-radius: 2rem;
 }
 
 .geel {
@@ -30,6 +33,7 @@ nav {
     justify-content: center;
     gap: 5rem;
     margin-top: 25rem;
+
 }
 
 #topper {
@@ -122,4 +126,22 @@ body {
     color: black;
     font-weight: bold;
     border-radius: 8px;
+}
+
+.card_columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+}
+
+.card_rows {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 5rem;
+}
+
+.card_rows,
+button {
+    height: 50px;
+    width: 75%;
 }

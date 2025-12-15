@@ -1,6 +1,8 @@
 <?php
-?><!DOCTYPE html>
-<html lang="nl">    
+?>
+<!DOCTYPE html>
+<html lang="nl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,28 +13,28 @@
 
 <body>
     <nav id="navbar">
-<ul>
-  <li><a href="index.php">terug naar menu</a></li>
-  <li><a href="rules.php">Regels</a></li>
-</ul>
-</nav>
+
+        <a href="index.php">terug naar menu</a>
+        <a href="rules.php">Regels</a>
+
+    </nav>
     <h1>Welkom bij het SET Spel</h1>
     <div class="container_field">
         <div class="container1" id="leftie">
             <button class="button" onclick="newGame()">nieuw Spel</button>
             <button class="button" onclick="addCards()">voeg 3 kaarten toe</button>
             <button class="button" onclick="findSet()">vind set</button>
-            <p id="scoreArea">Score: 100</p>  
+            <p id="scoreArea">Score: 100</p>
 
-            
 
-    
-    
-    
-         </div>
-    
+
+
+
+
+        </div>
+
         <div class="container2" id="center">
-    
+
             <div class="card_columns">
                 <div class="card_rows">
                     <button>1</button>
@@ -52,9 +54,8 @@
             </div>
 
         </div>
-    
+
     </div>
 </body>
+
 </html>
-
-
