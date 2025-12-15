@@ -4,17 +4,24 @@
 
 a {
     text-decoration: none;
-    height: 50px;
+    width: 125px;
+    height: 30px;
     background-color: #bccec2;
     padding: 1rem 2rem;
     border: 1px solid currentColor;
+    text-align: center;
 }
 
 #navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     gap: 5rem;
-    margin-top: 2rem;
+    margin-top: -7px;
+    background-color: #7e9e9b;
+    border: solid 2px black;
+    border-radius: 2rem;
+
+
 }
 
 .geel {
@@ -34,6 +41,7 @@ nav {
 
 #topper {
     margin-bottom: 5rem;
+
 }
 
 body {
@@ -89,19 +97,20 @@ body {
 
 }
 
-.card_columns{
+.card_columns {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 2rem;
 }
 
-.card_rows{
+.card_rows {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     gap: 5rem;
 }
 
-.card_rows, button{
+.card_rows,
+button {
     height: 50px;
     width: 75%;
 }
