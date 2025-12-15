@@ -10,7 +10,6 @@ a {
 }
 
 #navbar {
-
     justify-content: space-evenly;
     gap: 5rem;
     margin-top: -1px;
@@ -140,8 +139,7 @@ body {
     gap: 5rem;
 }
 
-.card_rows,
-button {
-    height: 50px;
+.card_rows button {
+    height: 9rem;
     width: 75%;
 }

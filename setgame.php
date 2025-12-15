@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SET Spel</title>
     <link rel="stylesheet" href="/style.css">
-    <script src="/script.js"></script>
+    <script src="/javascript.js"></script>
 </head>
 
 <body>
@@ -34,27 +34,29 @@
         </div>
 
         <div class="container2" id="center">
-
             <div class="card_columns">
                 <div class="card_rows">
-                    <button>1</button>
-                    <button>2</button>
-                    <button>3</button>
+                    <button id="1" onclick="cardSelect()">1</button>
+                    <button id="2" onclick="cardSelect()">2</button>
+                    <button id="3">3</button>
                 </div>
                 <div class="card_rows">
-                    <button>4</button>
-                    <button>5</button>
-                    <button>6</button>
+                    <button id="4">4</button>
+                    <button id="5">5</button>
+                    <button id="6">6</button>
                 </div>
                 <div class="card_rows">
-                    <button>7</button>
-                    <button>8</button>
-                    <button>9</button>
+                    <button id="7">7</button>
+                    <button id="8">8</button>
+                    <button id="9">9</button>
+                </div>
+                <div class="card_rows">
+                    <button id="10">10</button>
+                    <button id="11">11</button>
+                    <button id="12">12</button>
                 </div>
             </div>
-
         </div>
-
     </div>
 </body>
 
