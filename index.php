@@ -8,33 +8,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SET</title>
     <link rel="stylesheet" href="/style.css">
-
 </head>
 
 <body>
-
     <section>
         <nav>
             <div class="ttu">
-                <div>
-                    <a href="setgame.php" class="geel" id="topper">
-                        play SET </a>
-                </div>
-                <div>
-                    <a href="rules.php" id="topper">
-                        regels </a>
-                </div>
+                <a href="setgame.php">play Set</a>
+                <a href="rules.php">regels </a>
             </div>
-
-
-
-
         </nav>
     </section>
-
-
-
-
 </body>
 
 </html>

@@ -1,20 +1,19 @@
-:root {
-    box-sizing: border-box;
-}
-
 a {
     text-decoration: none;
-    height: 50px;
-    background-color: #bccec2;
+    height: 30px;
+    width: 125px;
+    background-color: #ffcd00;
     padding: 1rem 2rem;
     border: 1px solid currentColor;
+    text-align: center;
+    color: black;
 }
 
 #navbar {
 
     justify-content: space-evenly;
     gap: 5rem;
-    margin-top: -7px;
+    margin-top: -1px;
     background-color: #7e9e9b;
     border: solid 2px black;
     border-radius: 2rem;
@@ -32,13 +31,10 @@ nav {
     display: flex;
     justify-content: center;
     gap: 5rem;
-    margin-top: 25rem;
-
+    margin-top: 15rem;
 }
 
-#topper {
-    margin-bottom: 5rem;
-}
+
 
 body {
     background-color: #3a5757;
@@ -46,8 +42,16 @@ body {
 
 .ttu {
     display: grid;
-    grid-template-columns: 2fr;
-    gap: 5rem;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin: 2rem auto;
+    padding: 2rem;
+    border: 6px solid #7e9e9b;
+    border-radius: 12px;
+    box-shadow: 10px 10px 100px;
+    background: #7e9e9b;
+    text-align: center;
+
 }
 
 body {
@@ -72,7 +76,6 @@ body {
     border: 2px solid currentColor;
     border-radius: 20px;
     max-width: 900px;
-
     text-align: left;
 }
 
@@ -91,11 +94,8 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 18rem;
 
+
 }
-
-#leftie {}
-
-
 
 .sets-row {
     display: flex;
