@@ -89,6 +89,24 @@ body {
 
 }
 
+.card_columns{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+}
+
+.card_rows{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 5rem;
+}
+
+.card_rows, button{
+    height: 50px;
+    width: 75%;
+}
+
+
 #leftie {}
 
 

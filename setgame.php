@@ -32,7 +32,25 @@
     
          </div>
     
-        <div class="container2" id="center"></div>
+        <div class="container2" id="center">
+            <div class="card_columns">
+                <div class="card_rows">
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                </div>
+                <div class="card_rows">
+                    <button>4</button>
+                    <button>5</button>
+                    <button>6</button>
+                </div>
+                <div class="card_rows">
+                    <button>7</button>
+                    <button>8</button>
+                    <button>9</button>
+                </div>
+            </div>
+        </div>
     
     </div>
 </body>
