@@ -5,89 +5,135 @@ document.addEventListener("DOMContentLoaded", () => {
 const shapes = ["band", "pil", "ruit"];
 const colors = ["blauw", "geel", "groen"];
 const fillings = ["rand", "streep", "vol"];
+const amounts = [1, 2, 3];
 
-let selectedCards = [];
 const MAX_SELECT = 3;
+let selectedCards = [];
+let deck = [];
 
-/* -------- NIEUW SPEL -------- */
+
+
+
+
 function newGame() {
     const buttons = document.querySelectorAll(".card_rows button");
 
-    // Reset selectie
+
     selectedCards = [];
+    deck = createDeck();
+    shuffle(deck);
+
     buttons.forEach(button => {
         button.classList.remove("selected");
-        createCard(button);
+        dealCard(button);
     });
 }
 
-/* -------- KAART MAKEN -------- */
-function createCard(button) {
-    // Leeg de kaart
+function createDeck() {
+    const newDeck = [];
+
+    shapes.forEach(shape => {
+        colors.forEach(color => {
+            fillings.forEach(filling => {
+                amounts.forEach(amount => {
+                    newDeck.push({ shape, color, filling, amount });
+                });
+            });
+        });
+    });
+
+    return newDeck;
+}
+
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+function dealCard(button) {
+    if (deck.length === 0) return;
+
+    const card = deck.pop();
     button.innerHTML = "";
 
-    // Willekeurige eigenschappen kiezen
-    const shape = shapes[Math.floor(Math.random() * shapes.length)];
-    const color = colors[Math.floor(Math.random() * colors.length)];
-    const filling = fillings[Math.floor(Math.random() * fillings.length)];
-    const amount = Math.floor(Math.random() * 3) + 1; // 1, 2 of 3 symbolen
+    button.dataset.shape = card.shape;
+    button.dataset.color = card.color;
+    button.dataset.filling = card.filling;
+    button.dataset.amount = card.amount;
 
-    // Wrapper voor de inhoud van de kaart
     const wrapper = document.createElement("div");
     wrapper.classList.add("card-content");
 
-    // Symbolen toevoegen (1 tot 3 stuks)
-    for (let i = 0; i < amount; i++) {
+    for (let i = 0; i < card.amount; i++) {
         const img = document.createElement("img");
-        img.src = `/setkaarten/${shape}-${color}-${filling}.svg`;
-        img.alt = shape;
+        img.src = `/setkaarten/${card.shape}-${card.color}-${card.filling}.svg`;
         img.classList.add("card-svg");
-        img.classList.add(color);    // voor kleur (via CSS filter of SVG kleur)
-        img.classList.add(filling);  // voor vulling: rand, streep, vol
+
         wrapper.appendChild(img);
     }
 
-    // Wrapper in de button plaatsen
+
     button.appendChild(wrapper);
 
-    // Klik-event instellen (overschrijft eventuele vorige)
+
     button.onclick = () => cardSelect(button);
 }
 
-/* -------- KAART SELECTEREN -------- */
+
 function cardSelect(button) {
-    // Als de kaart al geselecteerd is → deselecteren
+
     if (button.classList.contains("selected")) {
         button.classList.remove("selected");
         selectedCards = selectedCards.filter(b => b !== button);
         return;
     }
 
-    // Maximaal 3 kaarten mogen geselecteerd zijn
+
     if (selectedCards.length >= MAX_SELECT) {
         alert("Je mag maar 3 kaarten kiezen!");
         return;
     }
 
-    // Selecteren
+
     button.classList.add("selected");
     selectedCards.push(button);
 
-    // Als er precies 3 zijn geselecteerd
+
     if (selectedCards.length === MAX_SELECT) {
-        alert("3 kaarten gekozen! Controleer straks of het een SET is.");
-        // Hier kun je later de echte SET-checklogic toevoegen, bijv.:
-        // checkIfSet();
+        checkSet();
     }
 }
 
-/* -------- EXTRA FUNCTIES (nog niet volledig) -------- */
+function checkSet() {
+    const properties = ["shape", "color", "filling", "amount"];
+
+    const isSet = properties.every(prop => {
+        const values = selectedCards.map(card => card.dataset[prop]);
+        const unique = new Set(values);
+        return unique.size === 1 || unique.size === 3;
+    });
+
+    if (isSet) {
+        alert("✅ GOED! Dit is een SET!");
+
+        selectedCards.forEach(button => {
+            button.classList.remove("selected");
+            dealCard(button);
+        });
+    } else {
+        alert("❌ FOUT! Dit is geen SET.");
+        selectedCards.forEach(button => button.classList.remove("selected"));
+    }
+
+    selectedCards = [];
+}
+
 function addCards() {
-    alert("Functie om 3 nieuwe kaarten toe te voegen komt later.");
-    // Later: maak 3 nieuwe buttons of vervang lege plekken
+    alert("3 kaarten toevoegen komt later");
 }
 
 function findSet() {
-    alert("Automatisch een SET zoeken komt later.");
-    // Later: zoek door alle kaarten en highlight een geldige set
+    alert("Automatisch SET zoeken komt later");
 }
