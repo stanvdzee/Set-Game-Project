@@ -10,14 +10,10 @@ const amounts = [1, 2, 3];
 const MAX_SELECT = 3;
 let selectedCards = [];
 let deck = [];
-
-
-
-
+let myscore = 100;
 
 function newGame() {
     const buttons = document.querySelectorAll(".card_rows button");
-
 
     selectedCards = [];
     deck = createDeck();
@@ -27,11 +23,13 @@ function newGame() {
         button.classList.remove("selected");
         dealCard(button);
     });
+
+    myscore = 100;
+    updateScore();
 }
 
 function createDeck() {
     const newDeck = [];
-
     shapes.forEach(shape => {
         colors.forEach(color => {
             fillings.forEach(filling => {
@@ -41,7 +39,6 @@ function createDeck() {
             });
         });
     });
-
     return newDeck;
 }
 
@@ -61,7 +58,7 @@ function dealCard(button) {
     button.dataset.shape = card.shape;
     button.dataset.color = card.color;
     button.dataset.filling = card.filling;
-    button.dataset.amount = card.amount;
+    button.dataset.amount = String(card.amount);
 
     const wrapper = document.createElement("div");
     wrapper.classList.add("card-content");
@@ -70,36 +67,28 @@ function dealCard(button) {
         const img = document.createElement("img");
         img.src = `/setkaarten/${card.shape}-${card.color}-${card.filling}.svg`;
         img.classList.add("card-svg");
-
+        img.alt = `${card.shape} ${card.color} ${card.filling}`;
         wrapper.appendChild(img);
     }
 
-
     button.appendChild(wrapper);
-
-
     button.onclick = () => cardSelect(button);
 }
 
-
 function cardSelect(button) {
-
     if (button.classList.contains("selected")) {
         button.classList.remove("selected");
         selectedCards = selectedCards.filter(b => b !== button);
         return;
     }
 
-
     if (selectedCards.length >= MAX_SELECT) {
         alert("Je mag maar 3 kaarten kiezen!");
         return;
     }
 
-
     button.classList.add("selected");
     selectedCards.push(button);
-
 
     if (selectedCards.length === MAX_SELECT) {
         checkSet();
@@ -117,7 +106,6 @@ function checkSet() {
 
     if (isSet) {
         alert("✅ GOED! Dit is een SET!");
-
         selectedCards.forEach(button => {
             button.classList.remove("selected");
             dealCard(button);
@@ -128,6 +116,21 @@ function checkSet() {
     }
 
     selectedCards = [];
+
+    if (isSet) {
+        myscore += 20;
+    } else {
+        myscore -= 10;
+    }
+
+    updateScore();
+}
+
+function updateScore() {
+    const scoreElement = document.getElementById("scoreArea");
+    if (scoreElement) {
+        scoreElement.textContent = "Score: " + myscore;
+    }
 }
 
 function addCards() {

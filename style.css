@@ -50,8 +50,11 @@ a:hover {
 
 nav {
     display: flex;
-    justify-content: center;
-    margin-top: 2rem;
+    justify-content: space-evenly;
+    background-color: #7e9e9b;
+    margin-top: 0px;
+    border: solid black 2px;
+    border-radius: 70px;
 }
 
 
@@ -135,6 +138,7 @@ nav {
     align-items: center;
     justify-content: center;
     gap: 6px;
+
 }
 
 .card-svg {
