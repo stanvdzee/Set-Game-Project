@@ -2,6 +2,13 @@
     box-sizing: border-box;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/* ---------------- IMAGES ---------------- */
 img {
     display: block;
     margin: 10px auto;
@@ -14,15 +21,15 @@ img:hover {
     transform: scale(1.05);
 }
 
+/* ---------------- LINKS / BUTTONS ---------------- */
 a {
     text-decoration: none;
-    height: 30px;
     width: 130px;
     background-color: #ffcd00;
     padding: 0.75rem 1.5rem;
     border: 2px solid currentColor;
     border-radius: 8px;
-    color: #000000;
+    color: #000;
     font-weight: 600;
     display: inline-flex;
     align-items: center;
@@ -33,17 +40,31 @@ a:hover {
     opacity: 0.85;
 }
 
-#navbar {
+/* ---------------- BODY ---------------- */
+body {
+    background-color: #3a5757;
+    font-family: sans-serif;
+}
 
+/* ---------------- NAVBAR ---------------- */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 8rem;
+    margin-top: 10rem;
+}
+
+#navbar {
+    display: flex;
     justify-content: space-evenly;
     gap: 5rem;
     margin-top: -7px;
     background-color: #7e9e9b;
-    border: solid 1px black;
+    border: 1px solid black;
     border-radius: 2rem;
-    display: flex;
 }
 
+/* ---------------- COLORS ---------------- */
 .geel {
     background-color: #ffcd00;
 }
@@ -52,17 +73,11 @@ a:hover {
     background-color: #7e9e9b;
 }
 
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 8rem;
-    margin-top: 10rem;
-
-}
-
+/* ---------------- TTU ---------------- */
 .ttu {
     display: grid;
-    gap: 2rem;
+    grid-template-columns: 2fr;
+    gap: 5rem;
     margin: 2rem auto;
     padding: 2rem;
     border: 6px solid #7e9e9b;
@@ -70,135 +85,114 @@ nav {
     box-shadow: 10px 10px 100px rgba(0, 0, 0, 0.4);
     background: #7e9e9b;
     text-align: center;
+}
 
-    #topper {
-        margin-bottom: 5rem;
-    }
+#topper {
+    margin-bottom: 5rem;
+}
 
-    body {
-        background-color: #3a5757;
-    }
+/* ---------------- CONTAINERS ---------------- */
+.container,
+.container1,
+.container2 {
+    background-color: #bccec2;
+    border: 2px solid currentColor;
+    border-radius: 20px;
+}
 
-    .ttu {
-        display: grid;
-        grid-template-columns: 2fr;
-        gap: 5rem;
+.container {
+    padding: 2rem;
+    max-width: 900px;
+    margin: 2rem auto;
+    text-align: left;
+}
 
-    }
+.container1 {
+    padding: 2rem;
+    max-width: 900px;
+    text-align: left;
+}
 
-    body {
-        background-color: #3a5757;
-        font-family: sans-serif;
-    }
+.container2 {
+    padding-top: 2rem;
+    width: 900px;
+    height: 400px;
+}
 
-    .container {
-        background-color: #bccec2;
-        padding: 2rem;
-        border: 2px solid currentColor;
-        border-radius: 20px;
-        max-width: 900px;
-        margin: 2rem auto;
-        text-align: left;
-    }
+/* ---------------- GRID ---------------- */
+.container_field {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18rem;
+}
 
-    .container1 {
-        background-color: #bccec2;
-        padding-top: 2rem;
-        padding-left: 2rem;
-        border: 2px solid currentColor;
-        border-radius: 20px;
-        max-width: 900px;
+/* ---------------- SETS ---------------- */
+.sets-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 2rem;
+}
 
-        text-align: left;
-    }
+.setblok {
+    flex: 1;
+    background-color: #fff;
+    padding: 1rem;
+    border: 1px solid #7e9e9b;
+    border-radius: 10px;
+}
 
-    .container2 {
-        background-color: #bccec2;
-        padding-top: 2rem;
-        border: 2px solid currentColor;
-        border-radius: 20px;
-        width: 900px;
-        height: 400px;
+/* ---------------- RULES BUTTON ---------------- */
+.rulesbutton {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
 
-    }
+.rulesbutton a {
+    font-weight: bold;
+}
 
-    .container_field {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 18rem;
+/* ---------------- CARDS ---------------- */
+.card_columns {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
 
-    }
+.card_rows {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 5rem;
+}
 
-    #leftie {}
+.card_rows button {
+    height: 50px;
+    width: 75%;
+}
 
+/* ---------------- BUTTON ---------------- */
+.button {
+    display: block;
+    margin: 1rem 0;
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    border: 2px solid #ffcd00;
+    background-color: #ffcd00;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.1s ease, opacity 0.2s ease;
+}
 
+.button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
 
-    .sets-row {
-        display: flex;
-        justify-content: space-between;
-        gap: 2rem;
-        margin-top: 2rem;
-    }
+.button:active {
+    transform: scale(0.97);
+}
 
-    .setblok {
-        flex: 1;
-        background-color: #fff;
-        padding: 1rem;
-        border: 1px solid #7e9e9b;
-        border-radius: 10px;
-    }
-
-    .rulesbutton {
-        display: flex;
-        justify-content: center;
-        margin-top: 2rem;
-    }
-
-    .rulesbutton a {
-        text-decoration: none;
-        background-color: #ffcd00;
-        padding: 1rem 2rem;
-        border: 1px solid currentColor;
-        color: black;
-        font-weight: bold;
-        border-radius: 8px;
-    }
-
-    .card_columns {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        gap: 2rem;
-    }
-
-    .card_rows {
-        display: grid;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
-        gap: 5rem;
-    }
-
-    .card_rows,
-    button {
-        height: 50px;
-        width: 75%;
-    }
-
-    .button {
-        display: block;
-        margin: 1rem 0;
-        padding: 0.8rem 1.5rem;
-        border-radius: 10px;
-        border: 2px solid #ffcd00;
-        background-color: #ffcd00;
-        font-weight: bold;
-        cursor: pointer;
-        transition: transform 0.1s ease, opacity 0.2s ease;
-    }
-
-    .button:hover {
-        transform: translateY(-2px);
-        opacity: 0.9;
-    }
-
-    .button:active {
-        transform: scale(0.97);
-    }
+button.selected {
+    outline: 4px solid #ffcd00;
+}
