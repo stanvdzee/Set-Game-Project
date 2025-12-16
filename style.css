@@ -2,6 +2,13 @@
     box-sizing: border-box;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/* ---------------- IMAGES ---------------- */
 img {
     display: block;
     margin: 10px auto;
@@ -14,15 +21,15 @@ img:hover {
     transform: scale(1.05);
 }
 
+/* ---------------- LINKS / BUTTONS ---------------- */
 a {
     text-decoration: none;
-    height: 30px;
     width: 130px;
     background-color: #ffcd00;
     padding: 0.75rem 1.5rem;
     border: 2px solid currentColor;
     border-radius: 8px;
-    color: #000000;
+    color: #000;
     font-weight: 600;
     display: inline-flex;
     align-items: center;
@@ -33,17 +40,31 @@ a:hover {
     opacity: 0.85;
 }
 
-#navbar {
+/* ---------------- BODY ---------------- */
+body {
+    background-color: #3a5757;
+    font-family: sans-serif;
+}
 
+/* ---------------- NAVBAR ---------------- */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 8rem;
+    margin-top: 10rem;
+}
+
+#navbar {
+    display: flex;
     justify-content: space-evenly;
     gap: 5rem;
     margin-top: -7px;
     background-color: #7e9e9b;
-    border: solid 1px black;
+    border: 1px solid black;
     border-radius: 2rem;
-    display: flex;
 }
 
+/* ---------------- COLORS ---------------- */
 .geel {
     background-color: #ffcd00;
 }
@@ -52,17 +73,11 @@ a:hover {
     background-color: #7e9e9b;
 }
 
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 8rem;
-    margin-top: 10rem;
-
-}
-
+/* ---------------- TTU ---------------- */
 .ttu {
     display: grid;
-    gap: 2rem;
+    grid-template-columns: 2fr;
+    gap: 5rem;
     margin: 2rem auto;
     padding: 2rem;
     border: 6px solid #7e9e9b;
@@ -70,7 +85,6 @@ nav {
     box-shadow: 10px 10px 100px rgba(0, 0, 0, 0.4);
     background: #7e9e9b;
     text-align: center;
-
 }
 
 #topper {
@@ -130,6 +144,10 @@ body {
     gap: 18rem;
 
 }
+
+#leftie {}
+
+
 
 .sets-row {
     display: flex;

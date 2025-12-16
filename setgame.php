@@ -16,6 +16,7 @@
 
         <a href="index.php">terug naar menu</a>
         <a href="rules.php">Regels</a>
+        <a href="highscores.php">highscores</a>
 
     </nav>
     <h1>Welkom bij het SET Spel</h1>
