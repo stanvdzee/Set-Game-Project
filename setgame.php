@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SET Spel</title>
     <link rel="stylesheet" href="/style.css">
-    <!-- Koppel hier je externe JS -->
     <script src="/javascript.js" defer></script>
 </head>
 
@@ -26,7 +25,7 @@
             <button class="button" onclick="findSet()">Vind set</button>
             <p id="scoreArea">Score: 100</p>
         </div>
-
+        
         <div class="container2" id="center">
             <div class="card_columns">
                 <div class="card_rows">
