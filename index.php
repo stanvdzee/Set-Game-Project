@@ -16,6 +16,7 @@
             <div class="ttu">
                 <a href="setgame.php">play Set</a>
                 <a href="rules.php">regels </a>
+                <a href="highscores.php">highscores </a>
             </div>
         </nav>
     </section>

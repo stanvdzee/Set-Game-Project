@@ -1,28 +1,33 @@
-class card{
+class card {
     maxSelect = 3;
     selectedArr = [];
     isSelected = false();
+
 }
 
-function newGame(){
-    alert("new game made");
+
+function newGame() {
+    location.reload();
+
 }
 
-function addCards(){
-    alert("added cards");
+function addCards() {
+    alert("3 cards added")
 }
 
-function findSet(){
+function findSet() {
     alert("set Found");
+
 }
 
-function cardSelect(){
+function cardSelect() {
 
-    if(onclick){
+    if (onclick) {
         isSelected = true;
-        
+        buttonClicked = document.getElementsByName(id)[0];
+
     }
-    if(maxSelect <= 3){
+    if (maxSelect <= 3) {
         alert("SET!");
     }
 }

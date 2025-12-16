@@ -26,11 +26,6 @@
             <button class="button" onclick="findSet()">vind set</button>
             <p id="scoreArea">Score: 100</p>
 
-
-
-
-
-
         </div>
 
         <div class="container2" id="center">

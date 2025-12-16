@@ -1,7 +1,7 @@
 a {
     text-decoration: none;
     height: 30px;
-    width: 125px;
+    width: 130px;
     background-color: #ffcd00;
     padding: 1rem 2rem;
     border: 1px solid currentColor;
@@ -14,8 +14,9 @@ a {
     gap: 5rem;
     margin-top: -1px;
     background-color: #7e9e9b;
-    border: solid 2px black;
+    border: solid 1px black;
     border-radius: 2rem;
+    display: flex;
 }
 
 .geel {
@@ -34,23 +35,16 @@ nav {
 }
 
 
-
-body {
-    background-color: #3a5757;
-}
-
 .ttu {
     display: grid;
-    grid-template-columns: 1fr;
     gap: 2rem;
     margin: 2rem auto;
     padding: 2rem;
     border: 6px solid #7e9e9b;
     border-radius: 12px;
-    box-shadow: 10px 10px 100px;
+    box-shadow: 10px 10px 100px rgba(0, 0, 0, 0.4);
     background: #7e9e9b;
     text-align: center;
-
 }
 
 body {
