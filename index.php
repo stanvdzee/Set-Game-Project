@@ -12,10 +12,10 @@
 </head>
 
 <body>
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiffFdca1Za8b7mt2v7pkQdwVLPYoQl-3AZQ&s" alt="Voorbeeld foto" width="300">
+    <img id="home" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiffFdca1Za8b7mt2v7pkQdwVLPYoQl-3AZQ&s" alt="Voorbeeld foto" width="300">
 
     <section>
-        <nav>
+        <nav id="navbar">
             <div class="ttu">
                 <a href="setgame.php">play Set</a>
                 <a href="rules.php">regels </a>
