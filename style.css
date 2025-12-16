@@ -2,6 +2,18 @@
     box-sizing: border-box;
 }
 
+img {
+    display: block;
+    margin: 10px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
 a {
     text-decoration: none;
     background-color: #ffcd00;
@@ -40,8 +52,8 @@ a:hover {
 nav {
     display: flex;
     justify-content: center;
-    gap: 5rem;
-    margin-top: 25rem;
+    gap: 8rem;
+    margin-top: 10rem;
 
 }
 
