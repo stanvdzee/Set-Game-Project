@@ -66,7 +66,7 @@ function shuffle(array) {
 }
 
 function dealCard(button) {
-    if (deck.length === 0) return;
+
 
     const card = deck.pop();
     button.innerHTML = "";
