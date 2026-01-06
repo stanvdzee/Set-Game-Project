@@ -183,7 +183,7 @@ function findSet() {
                         selectedCards.push(card);
                     });
 
-                    myscore -= 15;
+                    myscore -= 30;
                     updateScore();
                     return;
                 }
