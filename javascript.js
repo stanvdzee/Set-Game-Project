@@ -133,10 +133,10 @@ function updateScore() {
     }
 }
 
-function addCards() {
-    alert("3 kaarten toevoegen komt later");
-}
+//function addCards() {
+//alert("3 kaarten toevoegen komt later");
+//}
 
-function findSet() {
-    alert("Automatisch SET zoeken komt later");
-}
+//function findSet() {
+//alert("Automatisch SET zoeken komt later");
+//}
