@@ -165,8 +165,39 @@ function addCards() {
     myscore -= 5;
     updateScore();
 }
-
-
 function findSet() {
-    alert("Automatisch SET zoeken komt later");
+    const cards = Array.from(document.querySelectorAll("#mainCards button"));
+
+    // Reset bestaande selectie
+    selectedCards.forEach(card => card.classList.remove("selected"));
+    selectedCards = [];
+
+    for (let i = 0; i < cards.length; i++) {
+        for (let j = i + 1; j < cards.length; j++) {
+            for (let k = j + 1; k < cards.length; k++) {
+                const trio = [cards[i], cards[j], cards[k]];
+
+                if (isSet(trio)) {
+                    trio.forEach(card => {
+                        card.classList.add("selected");
+                        selectedCards.push(card);
+                    });
+
+                    myscore -= 15;
+                    updateScore();
+                    return;
+                }
+            }
+        }
+    }
+
+    alert("Geen SET gevonden op het bord.");
+}
+function isSet(cards) {
+    const properties = ["shape", "color", "filling", "amount"];
+    return properties.every(prop => {
+        const values = cards.map(card => card.dataset[prop]);
+        const unique = new Set(values);
+        return unique.size === 1 || unique.size === 3;
+    });
 }

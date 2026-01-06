@@ -220,3 +220,11 @@ nav {
     align-items: center;
     justify-content: center;
 }
+
+.selected {
+    border: 3px solid yellow;
+}
+
+.clicked {
+    border: 3px solid blue;
+}
