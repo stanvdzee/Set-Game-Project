@@ -6,6 +6,9 @@ const shapes = ["band", "pil", "ruit"];
 const colors = ["blauw", "geel", "groen"];
 const fillings = ["rand", "streep", "vol"];
 const amounts = [1, 2, 3];
+let addCardsCount = 0;
+const MAX_ADD_CARDS = 2;
+
 
 const MAX_SELECT = 3;
 let selectedCards = [];
@@ -13,7 +16,9 @@ let deck = [];
 let myscore = 100;
 
 function newGame() {
-    const buttons = document.querySelectorAll(".card_rows button");
+    const buttons = document.querySelectorAll("#mainCards button");
+    const extraButtons = document.querySelectorAll(".extra");
+    const extraContainer = document.querySelector(".extra_cards_container");
 
     selectedCards = [];
     deck = createDeck();
@@ -24,6 +29,17 @@ function newGame() {
         dealCard(button);
     });
 
+    extraButtons.forEach(button => {
+        button.innerHTML = "";
+        button.removeAttribute("data-shape");
+        button.removeAttribute("data-color");
+        button.removeAttribute("data-filling");
+        button.removeAttribute("data-amount");
+        button.onclick = null;
+        button.classList.remove("selected");
+    });
+
+    extraContainer.style.display = "none";
     myscore = 100;
     updateScore();
 }
@@ -110,19 +126,14 @@ function checkSet() {
             button.classList.remove("selected");
             dealCard(button);
         });
+        myscore += 20;
     } else {
         alert("❌ FOUT! Dit is geen SET.");
         selectedCards.forEach(button => button.classList.remove("selected"));
-    }
-
-    selectedCards = [];
-
-    if (isSet) {
-        myscore += 20;
-    } else {
         myscore -= 10;
     }
 
+    selectedCards = [];
     updateScore();
 }
 
@@ -134,8 +145,27 @@ function updateScore() {
 }
 
 function addCards() {
-    alert("3 kaarten toevoegen komt later");
+    if (addCardsCount >= MAX_ADD_CARDS) {
+        alert("Je mag maximaal 2 keer extra kaarten toevoegen!");
+        return;
+    }
+
+    const cardRow = document.querySelector("#mainCards .card_rows");
+
+    for (let i = 0; i < 3; i++) {
+        if (deck.length === 0) return;
+
+        const button = document.createElement("button");
+        dealCard(button);
+        cardRow.appendChild(button);
+    }
+
+    addCardsCount++;
+
+    myscore -= 5;
+    updateScore();
 }
+
 
 function findSet() {
     alert("Automatisch SET zoeken komt later");

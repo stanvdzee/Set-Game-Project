@@ -5,9 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SET Spel</title>
-    <link rel="stylesheet" href="/style.css">
-    <!-- Koppel hier je externe JS -->
-    <script src="/javascript.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="javascript.js" defer></script>
 </head>
 
 <body>
@@ -20,37 +19,37 @@
     <h1 style="text-align: center;">Welkom bij het SET Spel</h1>
 
     <div class="container_field">
-        <div class="container1" id="leftie">
+        <!-- Linker menu -->
+        <div class="container1">
             <button class="button" onclick="newGame()">Nieuw spel</button>
             <button class="button" onclick="addCards()">Voeg 3 kaarten toe</button>
             <button class="button" onclick="findSet()">Vind set</button>
             <p id="scoreArea">Score: 100</p>
         </div>
 
-        <div class="container2" id="center">
-            <div class="card_columns">
-                <div class="card_rows">
-                    <button id="1">1</button>
-                    <button id="2">2</button>
-                    <button id="3">3</button>
+        <!-- Midden: kaarten -->
+        <div class="container2">
+            <div class="card_zone">
+                <div class="card_columns" id="mainCards">
+                    <div class="card_rows">
+                        <button id="1"></button>
+                        <button id="2"></button>
+                        <button id="3"></button>
+                        <button id="4"></button>
+                        <button id="5"></button>
+                        <button id="6"></button>
+                        <button id="7"></button>
+                        <button id="8"></button>
+                        <button id="9"></button>
+                        <button id="10"></button>
+                        <button id="11"></button>
+                        <button id="12"></button>
+                    </div>
                 </div>
-                <div class="card_rows">
-                    <button id="4">4</button>
-                    <button id="5">5</button>
-                    <button id="6">6</button>
-                </div>
-                <div class="card_rows">
-                    <button id="7">7</button>
-                    <button id="8">8</button>
-                    <button id="9">9</button>
-                </div>
-                <div class="card_rows">
-                    <button id="10">10</button>
-                    <button id="11">11</button>
-                    <button id="12">12</button>
-                </div>
+
             </div>
         </div>
+    </div>
     </div>
 </body>
 

@@ -129,7 +129,9 @@ nav {
 
 .card_columns {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 160px);
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(130px, 1fr);
     gap: 1.5rem;
 }
 
@@ -192,4 +194,29 @@ nav {
 
 .keiGrijs {
     background-color: #7e9e9b;
+}
+
+.card_zone {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.extra_cards_container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.extra_cards button {
+    height: 160px;
+    width: 100%;
+    background-color: #fff;
+    border: 2px solid #333;
+    border-radius: 12px;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
