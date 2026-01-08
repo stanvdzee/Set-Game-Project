@@ -9,7 +9,6 @@ const amounts = [1, 2, 3];
 let addCardsCount = 0;
 const MAX_ADD_CARDS = 2;
 
-
 const MAX_SELECT = 3;
 let selectedCards = [];
 let deck = [];
@@ -32,17 +31,22 @@ function newGame() {
         dealCard(button);
     });
 
-    extraButtons.forEach(button => {
-        button.innerHTML = "";
-        button.removeAttribute("data-shape");
-        button.removeAttribute("data-color");
-        button.removeAttribute("data-filling");
-        button.removeAttribute("data-amount");
-        button.onclick = null;
-        button.classList.remove("selected");
-    });
+    if (extraButtons) {
+        extraButtons.forEach(button => {
+            button.innerHTML = "";
+            button.removeAttribute("data-shape");
+            button.removeAttribute("data-color");
+            button.removeAttribute("data-filling");
+            button.removeAttribute("data-amount");
+            button.onclick = null;
+            button.classList.remove("selected");
+        });
+    }
 
-    extraContainer.style.display = "none";
+    if (extraContainer) {
+        extraContainer.style.display = "none";
+    }
+
     myscore = 100;
     updateScore();
 }
@@ -69,9 +73,9 @@ function shuffle(array) {
 }
 
 function dealCard(button) {
-
-
     const card = deck.pop();
+    if (!card) return;
+
     button.innerHTML = "";
 
     button.dataset.shape = card.shape;
@@ -168,10 +172,10 @@ function addCards() {
     myscore -= 5;
     updateScore();
 }
+
 function findSet() {
     const cards = Array.from(document.querySelectorAll("#mainCards button"));
 
-    // Reset bestaande selectie
     selectedCards.forEach(card => card.classList.remove("selected"));
     selectedCards = [];
 
@@ -196,6 +200,7 @@ function findSet() {
 
     alert("Geen SET gevonden op het bord.");
 }
+
 function isSet(cards) {
     const properties = ["shape", "color", "filling", "amount"];
     return properties.every(prop => {
@@ -203,4 +208,19 @@ function isSet(cards) {
         const unique = new Set(values);
         return unique.size === 1 || unique.size === 3;
     });
+}
+
+function saveScore() {
+    fetch("score.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: "score=" + encodeURIComponent(myscore)
+    })
+        .then(res => res.text())
+        .then(data => {
+            alert("Score opgeslagen!");
+            window.location.href = "highscores.php";
+        });
 }

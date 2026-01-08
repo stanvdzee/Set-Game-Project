@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="nl">
 
@@ -25,6 +28,7 @@
             <button class="button" onclick="addCards()">Voeg 3 kaarten toe</button>
             <button class="button" onclick="findSet()">Vind set</button>
             <p id="scoreArea">Score: 100</p>
+            <button class="button" onclick="saveScore()">Score opslaan</button>
         </div>
 
         <!-- Midden: kaarten -->
@@ -46,10 +50,8 @@
                         <button id="12"></button>
                     </div>
                 </div>
-
             </div>
         </div>
-    </div>
     </div>
 </body>
 
