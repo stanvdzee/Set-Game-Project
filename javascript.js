@@ -24,6 +24,9 @@ function newGame() {
     deck = createDeck();
     shuffle(deck);
 
+    myscore = 100;
+    updateScore();
+
     buttons.forEach(button => {
         button.classList.remove("selected");
         dealCard(button);
