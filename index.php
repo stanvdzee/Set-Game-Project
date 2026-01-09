@@ -34,12 +34,6 @@ session_start();
             <?php endif; ?>
         </div>
     </nav>
-
-    <main>
-        <h1>Welkom bij het SET spel!</h1>
-        <p>Kies hierboven wat je wilt doen.</p>
-    </main>
-
 </body>
 
 </html>
